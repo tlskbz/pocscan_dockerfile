@@ -7,7 +7,7 @@ server {
         }
 
         location / {
-                uwsgi_pass unix:///tmp/uwsgi.sock;
+                uwsgi_pass unix:///var/run/uwsgi.sock;
                 include uwsgi_params;
         }
 }
@@ -20,7 +20,7 @@ server {
         }
 
         location / {
-                uwsgi_pass unix:///tmp/uwsgi.sock;
+                uwsgi_pass unix:///var/run/uwsgi.sock;
                 include uwsgi_params;
         }
 }

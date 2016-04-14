@@ -2,11 +2,12 @@
 # Debian 8 PHP-Nginx Docker container
 #++++++++++++++++++++++++++++++++++++++
 
-FROM ubuntu/env:1.0 
+FROM pocscan/env:2.0 
 MAINTAINER kbz 
 
 COPY superenv.conf /etc/supervisor/conf.d/superenv.conf
 COPY nginx_uwsgi /etc/nginx/sites-enabled/nginx_uwsgi 
+COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 
