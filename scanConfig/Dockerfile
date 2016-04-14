@@ -15,8 +15,4 @@ RUN chmod 777 /tmp/init.sh
 
 COPY greenlet.py /usr/local/lib/python2.7/dist-packages/gevent/greenlet.py
 
-RUN apt-get update
-RUN apt-get install libssl-dev libffi-dev -y
-RUN /usr/bin/pip install cryptography butterfly
-
 ENTRYPOINT ["/etc/init.d/supervisor","start"]
