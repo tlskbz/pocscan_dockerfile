@@ -20,7 +20,5 @@ RUN mkdir /www
 
 # Install extera with pip
 #
-RUN /usr/bin/pip install -r /tmp/requirements.txt 
-RUN /usr/bin/pip install cffi butterfly
 RUN /usr/bin/pip install uwsgi
-RUN /usr/bin/pip install suit
+RUN /usr/bin/pip install -r /tmp/requirements.txt 
