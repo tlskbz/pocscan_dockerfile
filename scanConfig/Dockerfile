@@ -11,9 +11,13 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 
+
+RUN apt-get install git -y
+RUN git clone https://github.com/erevus-cn/pocscan.git /www/
+
 COPY init.sh /tmp/init.sh
 RUN chmod 777 /tmp/init.sh
 
 COPY greenlet.py /usr/local/lib/python2.7/dist-packages/gevent/greenlet.py
-
+EXPOSE 8000
 ENTRYPOINT ["/etc/init.d/supervisor","start"]
