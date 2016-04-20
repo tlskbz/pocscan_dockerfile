@@ -9,7 +9,6 @@ MAINTAINER kbz
 COPY soulist /etc/apt/sources.list
 COPY requirements.txt /tmp/requirements.txt
 COPY pip.conf /root/.pip/pip.conf
-COPY sqlmap /usr/share/sqlmap
 
 # Install python,pip,nginx,supervisor,python-dev
 #
