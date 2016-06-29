@@ -2,7 +2,7 @@
 # Debian 8 PHP-Nginx Docker container
 #++++++++++++++++++++++++++++++++++++++
 
-FROM pocscan/env:2.0 
+FROM bishe/env:2.0 
 MAINTAINER kbz 
 
 COPY superenv.conf /etc/supervisor/conf.d/superenv.conf
@@ -13,6 +13,7 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 COPY init.sh /tmp/init.sh
 RUN chmod 777 /tmp/init.sh
+RUN pip install hackhttp==1.0.3
 
 COPY greenlet.py /usr/local/lib/python2.7/dist-packages/gevent/greenlet.py
 
