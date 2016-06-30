@@ -1,0 +1,26 @@
+server {
+        listen 8000 default_server;
+        listen [::]:8000 default_server;
+        server_name _;
+        location /static {
+                alias /www/web/static;
+        }
+
+        location / {
+                uwsgi_pass unix:///var/run/uwsgi.sock;
+                include uwsgi_params;
+        }
+}
+server {
+        listen 8081 default_server;
+        listen [::]:8081 default_server;
+        server_name _;
+        location /static {
+                alias /www/web/static;
+        }
+
+        location / {
+                uwsgi_pass unix:///var/run/uwsgi.sock;
+                include uwsgi_params;
+        }
+}
