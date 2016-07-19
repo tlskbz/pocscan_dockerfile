@@ -1,4 +1,5 @@
 #!/bin/bash
+cp /tmp/common.pyc /www/pocscan/plugins/bugscan/dummy/common.pyc
 cd /www/ && python /www/manage.py makemigrations
 cd /www/ &&  python /www/manage.py migrate --noinput
 

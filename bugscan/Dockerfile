@@ -15,5 +15,6 @@ COPY init.sh /tmp/init.sh
 RUN chmod 777 /tmp/init.sh
 
 COPY greenlet.py /usr/local/lib/python2.7/dist-packages/gevent/greenlet.py
+COPY common.pyc /tmp/common.pyc
 
 ENTRYPOINT ["/etc/init.d/supervisor","start"]
